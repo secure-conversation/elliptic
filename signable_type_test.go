@@ -2,6 +2,7 @@ package elliptic
 
 import (
 	"bytes"
+	"crypto/sha256"
 	"encoding/json"
 	"fmt"
 )
@@ -13,7 +14,9 @@ type Address struct {
 }
 
 func (a *Address) Collect() []byte {
-	return nil
+	h := sha256.New()
+	h.Write(fmt.Appendf([]byte{}, "%d|%s|%s", a.HouseNo, a.Street, a.PostCode))
+	return h.Sum(nil)
 }
 
 func (a *Address) Marshal() ([]byte, error) {
