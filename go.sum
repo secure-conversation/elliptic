@@ -1,0 +1,4 @@
+github.com/samborkent/uuidv7 v0.0.0-20231110121620-f2e19d87e48b h1:39v+thWy220bPAl5iP0p0b1s5DXmrtidMFRZqYsmEfI=
+github.com/samborkent/uuidv7 v0.0.0-20231110121620-f2e19d87e48b/go.mod h1:Z46aLAe76cDDo+W1m5zVg+KeB+4P2+xWENVEFFzbBuQ=
+github.com/secure-conversation/ident v0.0.0-20240618104114-5e227c3d5afd h1:Mr+6uk4Oph2o9d2c2SwmKKSh0qDBYhSCLHaHuLWBanM=
+github.com/secure-conversation/ident v0.0.0-20240618104114-5e227c3d5afd/go.mod h1:M2Xw9WFHYeR9LbEOYoHP9M/RwGs/O1Lbn3Z8EZVq2ME=

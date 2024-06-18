@@ -8,6 +8,8 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"errors"
+
+	"github.com/secure-conversation/ident"
 )
 
 // ErrPrivateKeyMissing is returned when the PrivateKey is nil
@@ -17,7 +19,7 @@ var ErrPrivateKeyMissing = errors.New("no PrivateKey")
 var ErrInvalidCurve = errors.New("invalid curve")
 
 // PrivateKeyIDLength is the length of the PrivateKeyID
-const PrivateKeyIDLength = 32
+const PrivateKeyIDLength = 16
 
 // PrivateKeyID is an array type holding unique identifiers for PrivateKeys
 type PrivateKeyID [PrivateKeyIDLength]byte
@@ -38,19 +40,13 @@ type PrivateKey struct {
 	id PrivateKeyID
 }
 
-func (p *PrivateKey) createID() error {
-	// Make ID() non-deterministic
-	b := make([]byte, PrivateKeyIDLength)
-	rand.Read(b)
-	copy(p.id[:], b)
-	return nil
+func (p *PrivateKey) createID() {
+	p.id = ident.NewID[PrivateKeyID]()
 }
 
 // ID is the unique identifier of this private key
 func (p *PrivateKey) ID() PrivateKeyID {
-	var id PrivateKeyID
-	copy(id[:], p.id[:])
-	return id
+	return ident.CopyID(p.id)
 }
 
 // Curve used to create the private key

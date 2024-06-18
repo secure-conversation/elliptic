@@ -454,7 +454,7 @@ func ExampleNewSharedSecret() {
 
 func ExamplePrivateKey_Marshal() {
 
-	der := []byte(`{"i":"YRAW0OJHCKlFfsdqZYoLRzBqQQ/qF1mJp2NyfL5YdIo","k":"MIHuAgEAMBAGByqGSM49AgEGBSuBBAAjBIHWMIHTAgEBBEIA8v8KCjYJIRFR2gULcjul6/rwULLhT3SuXGh7+qJm3fMtyhoZDnq4hTy9aBkXPVCEypx2VZtKtT7wDT3VDu0KJHOhgYkDgYYABAH9aPuP+qd4njJC2ATjsqpYm/xWka74v0/UtboP0uqw9jsoItmbhxAdjp9NTvr3P4clENbyxKFBloLdbn9aIBHY1AHrhGT8MJy00FxO6xBmKRmuKCiNgdeVKCtfwnyngyGEJ5HX2eLnixWUzP3Ut3ZBDpiDupgpoEkokwiPM+gMe2eOXg"}`)
+	der := []byte(`{"i":"AZAq+lK6d0y2SOYveK9Bcg","k":"MIG2AgEAMBAGByqGSM49AgEGBSuBBAAiBIGeMIGbAgEBBDAqEaO+nyVn5KSQJVbWeNdsL0vBUSGDbCFGOV2xEzfwqXGTtj6X1SMaXB25yY5tmbqhZANiAAQ7CH6FUq8kisQraFtqFEvqsssX5zAOZpD0ZUIx3t8Y4NtHMjzpEic29ataZxrAjb9IQ4/AEmk64x5b3BSs5cbskOtUtK/dmeD/SuU9skbweGQLs8BiDVp9nTW8EQO3ujc"}`)
 	key, _ := UnMarshalPrivateKey(der)
 
 	b, _ := key.Marshal()

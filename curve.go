@@ -61,10 +61,7 @@ func (c *crv) GenerateKey() (*PrivateKey, error) {
 		return nil, err
 	}
 	p := &PrivateKey{k: key, c: c}
-	err = p.createID()
-	if err != nil {
-		return nil, err
-	}
+	p.createID()
 	return p, nil
 }
 
